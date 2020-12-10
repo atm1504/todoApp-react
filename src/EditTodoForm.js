@@ -5,18 +5,23 @@ import useInputState from "./hooks/useInputState";
 function EditTodoForm({editTodo,task, toggleEditForm,id}) {
     const [value, handleChange, reset] = useInputState(task);
     return (
-        <form onSubmit={(e) => {
-            e.preventDefault();
-            editTodo(id, value);
-            reset();
-            toggleEditForm();
-        }}>
-        <TextField
-            margin="normal"
-            value={value}
-            onChange={handleChange}
-            fullWidth
-            />
+        <form
+            onSubmit={(e) => {
+                e.preventDefault();
+                editTodo(id, value);
+                reset();
+                toggleEditForm();
+            }}
+
+            style = {{marginLeft: "1rem", width:"50%"}}
+        >
+            <TextField
+                margin="normal"
+                value={value}
+                onChange={handleChange}
+                fullWidth
+                autoFocus
+                />
         </form>
     )
 }
