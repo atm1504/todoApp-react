@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import TodoList from "./TodoList";
 import TodoForm from "./TodoForm";
 
+
 function TodoApp() {
     const initialTodos = [
         { id: 1, task: "Clean Fishtank", completed: false },
@@ -32,8 +33,12 @@ function TodoApp() {
                 </ToolBar>
 
             </AppBar>
-            <TodoForm addTodo={addTodo}/>
-            <TodoList todos={ todos}/>
+            <Grid container justify='center' style={{marginTop: "1rem"}}>
+                <Grid item xs={11} ms={8} g={4}>
+                    <TodoForm addTodo={addTodo}/>
+                    <TodoList todos={todos} />
+                </Grid>
+            </Grid>
         </Paper>
     )
 }
